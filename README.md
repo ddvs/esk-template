@@ -5,7 +5,7 @@
 这个是[vue-cli](https://github.com/vuejs/vue-cli)的项目模板，结合易思客模板开发，运行请全局安装[nuxt](https://github.com/nuxt/nuxt.js): npm i nuxt -g
 
 ``` bash
-$ vue init ddvs/esy-template my-project
+$ vue init ddvs/esk-template my-project
 ```
 
 ## Usage
