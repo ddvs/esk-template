@@ -73,7 +73,6 @@ module.exports = {
   loading: {
     color: '#3B8070'
   },
-  modules: ['@nuxtjs/component-cache'],
   router: {
     scrollBehavior (to, from, savedPosition) {
       if (savedPosition) {
