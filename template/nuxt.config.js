@@ -4,7 +4,7 @@ module.exports = {
      ** Headers of the page
      */
   head: {
-    title: 'ddv-template',
+    title: 'esk-template',
     meta: [
       {charset: 'utf-8'},
       {'http-equiv': 'content-type', 'content': 'text/html;charset=utf-8'},
@@ -52,8 +52,6 @@ module.exports = {
           'component',
           {
             libraryName: 'element-ui'
-            // styleLibraryName: '~theme'
-            // styleLibraryName: 'theme-default'
           }
         ]
       ]
