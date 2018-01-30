@@ -3,6 +3,8 @@
 <style src="ddv-ui/css/wap/base.css" lang="css"></style>
 <!-- 这个是图片、容器指令用到的css，可合并到base.css -->
 <style src="~/assets/css/flex.css" lang="css"></style>
+<style src="swiper/dist/css/swiper.min.css"></style>
+
 <template>
   <div class="wechat-page">
     <nuxt/>
@@ -45,7 +47,7 @@ export default {
   middleware: 'wechatConfig',
   head () {
     return {
-      title: 'ddv',
+      title: this.$store.state.siteTitle || '首页',
       meta: [
         {
           'charset': 'utf-8'
@@ -101,6 +103,16 @@ export default {
         {
           'name': 'x5-page-mode',
           'content': 'app'
+        },
+        {
+          'hid': 'description',
+          'name': 'description',
+          'content': this.$store.state.siteDescription
+        },
+        {
+          'hid': 'keywords',
+          'name': 'keywords',
+          'content': this.$store.state.siteKeywords
         }
       ]
     }
