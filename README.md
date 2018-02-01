@@ -6,6 +6,8 @@
 
 ``` bash
 $ vue init ddvs/esk-template my-project
+# 安装依赖包
+npm run ip
 ```
 
 ## Usage
@@ -13,16 +15,16 @@ $ vue init ddvs/esk-template my-project
 ### Development
 
 ``` bash
-# serve with hot reloading at localhost:3000
+# 热重新加载服务: localhost:3000 or 127.0.0.1:3000
 $ nuxt dev
 ```
 
-Go to [http://localhost:3000](http://localhost:3000)
+Go to [http://localhost:3000](http://localhost:3000) or [http://127.0.0.1:3000](http://127.0.0.1:3000)
 
 ### Production
 
 ``` bash
-# build for production and launch the server
+# 建立生产和启动服务器
 $ nuxt build
 $ nuxt start
 ```
@@ -30,6 +32,6 @@ $ nuxt start
 ### Generate
 
 ``` bash
-# generate a static project
+# 生成一个静态项目
 $ nuxt generate
 ```
