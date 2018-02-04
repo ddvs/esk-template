@@ -4,6 +4,11 @@
 <!-- 这个是图片、容器指令用到的css，可合并到base.css -->
 <style src="~/assets/css/flex.css" lang="css"></style>
 <style src="swiper/dist/css/swiper.min.css"></style>
+<style>
+body * {
+  max-height: 999999px;
+}
+</style>
 
 <template>
   <div class="wechat-page">
