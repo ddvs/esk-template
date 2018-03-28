@@ -33,13 +33,13 @@ let directive = { // 指令
         let ratio = w / h
         let pRatio = pW / pH
         if (pRatio > ratio) {
-          addClass(el, 'Hcenter')
-          removeClass(el, 'Vcenter')
+          removeClass(el, 'Hcenter')
+          addClass(el, 'Vcenter')
           // el.classList.remove('Hcenter')
           // el.classList.add('Vcenter')
         } else {
-          addClass(el, 'Vcenter')
-          removeClass(el, 'Hcenter')
+          removeClass(el, 'Vcenter')
+          addClass(el, 'Hcenter')
           // el.classList.remove('Vcenter')
           // el.classList.add('Hcenter')
         }
