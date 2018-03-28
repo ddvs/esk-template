@@ -8,7 +8,20 @@ let filters = { // 过滤器
 Object.keys(filters).forEach(key => {
   Vue.filter(key, filters[key])
 })
-
+// class操作兼容
+function hasClass (elements, cName) {
+  return !!elements.className.match(new RegExp('(\\s|^)' + cName + '(\\s|$)'))
+}
+function addClass (elements, cName) {
+  if (!hasClass(elements, cName)) {
+    elements.className += ' ' + cName
+  }
+}
+function removeClass (elements, cName) {
+  if (hasClass(elements, cName)) {
+    elements.className = elements.className.replace(new RegExp('(\\s|^)' + cName + '(\\s|$)'), ' ')
+  }
+}
 let directive = { // 指令
   center: { // 图片居中切割
     inserted: function (el, binding) {
@@ -20,21 +33,23 @@ let directive = { // 指令
         let ratio = w / h
         let pRatio = pW / pH
         if (pRatio > ratio) {
-          el.classList.remove('Hcenter')
-          el.classList.add('Vcenter')
+          addClass(el, 'Hcenter')
+          removeClass(el, 'Vcenter')
+          // el.classList.remove('Hcenter')
+          // el.classList.add('Vcenter')
         } else {
-          el.classList.remove('Vcenter')
-          el.classList.add('Hcenter')
-        }
-        if (typeof binding.value === 'function') { // 轮播图处理
-          binding.value(true)
+          addClass(el, 'Vcenter')
+          removeClass(el, 'Hcenter')
+          // el.classList.remove('Vcenter')
+          // el.classList.add('Hcenter')
         }
       }
     }
   },
   flex: { // 容器自适应
     inserted: function (el, binding) {
-      el.classList.add('flex-box')
+      // el.classList.add('flex-box')
+      addClass(el, 'flex-box')
       var div = document.createElement('div')
       div.className = 'expansion'
       div.style.paddingBottom = binding.value * 100 + '%'
