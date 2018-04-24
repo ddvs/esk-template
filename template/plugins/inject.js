@@ -1,4 +1,7 @@
 import Vue from 'vue'
+const emptyLeft = '(\\s|^)'
+const emptyright = '(\\s|$)'
+
 let filters = { // 过滤器
   time: (val, rule = 'Y-m-d h:m:s') => {
     return d.date(rule, val)
@@ -10,7 +13,7 @@ Object.keys(filters).forEach(key => {
 })
 // class操作兼容
 function hasClass (elements, cName) {
-  return !!elements.className.match(new RegExp('(\\s|^)' + cName + '(\\s|$)'))
+  return !!elements.className.match(new RegExp(emptyLeft + cName + emptyright))
 }
 function addClass (elements, cName) {
   if (!hasClass(elements, cName)) {
@@ -19,7 +22,7 @@ function addClass (elements, cName) {
 }
 function removeClass (elements, cName) {
   if (hasClass(elements, cName)) {
-    elements.className = elements.className.replace(new RegExp('(\\s|^)' + cName + '(\\s|$)'), ' ')
+    elements.className = elements.className.replace(new RegExp(emptyLeft + cName + emptyright), ' ')
   }
 }
 let directive = { // 指令
