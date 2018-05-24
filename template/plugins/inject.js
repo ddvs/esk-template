@@ -47,7 +47,7 @@ let directive = { // 指令
       }
     }
   },
-  flex: function (el, binding) {// 容器自适应
+  flex: function (el, binding) { // 容器自适应
     // el.classList.add('flex-box')
     addClass(el, 'flex-box')
     var div = document.createElement('div')
@@ -56,6 +56,7 @@ let directive = { // 指令
     el.appendChild(div)
   },
   src: function (el, binding) {
+    if (binding.value === el.src) return
     setTimeout(() => {
       let pW = el.parentNode.offsetWidth
       let pH = el.parentNode.offsetHeight
